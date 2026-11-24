@@ -1,0 +1,4 @@
+-- Update resolve_combat_attack: equipped items add their catalog attack_bonus.
+-- The deployed Supabase function has already been updated to this logic.
+-- Revoke direct execution from client roles; Edge Function service_role calls it.
+-- The canonical function definition is deployed in Supabase project CuongChienOnline.

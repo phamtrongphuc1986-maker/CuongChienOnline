@@ -1,0 +1,24 @@
+-- CuongChienOnline v13-v15: server independent AI + private Realtime
+-- Applied to Supabase project slupzdmsahhhqbeetoig.
+--
+-- v13:
+--   pg_cron job cuongchien-world-monster-ai runs every 2 seconds.
+--   public.world_monster_ai_tick() is executed by PostgreSQL, independently
+--   of player movement requests. It selects the nearest active player, moves
+--   the Slime at up to 90 units/second and calls server-side hit resolution
+--   when the monster reaches 30 units.
+--
+-- v14:
+--   submit_player_position() only validates and persists player coordinates.
+--   It no longer advances AI; this prevents player requests from controlling
+--   the server AI clock.
+--   Database triggers use realtime.send(..., 'game-village', true) to emit
+--   authoritative player_position and monster_position events.
+--
+-- v15:
+--   submit_player_position() upserts game_presence from authenticated profile
+--   data, and remains service_role-only.
+--
+-- Realtime channel uses private=true. Existing policies on realtime.messages
+-- authorize authenticated SELECT/INSERT for topic game-village and
+-- extensions broadcast/presence.
