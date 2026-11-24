@@ -1,0 +1,14 @@
+CUONG CHIEN ONLINE - VAT PHAM/TRANG BI (CAP NHAT)
+
+- Danh muc 6 vat pham, mua bang vang, mac/thao theo slot, dung binh mau.
+- Giao dien tui do online lay danh sach tu get_inventory_state.
+- Trang bi dang mac duoc ve minh hoa tren nhan vat: giap, mu, vu khi, giay.
+- Chi so phong thu giam sat thuong quai trong che do offline.
+- Edge Function game-combat version 9 da them action inventory_state.
+- RPC game_inventory_action/get_inventory_state chi service_role duoc goi.
+
+Gioi han:
+- Trong online multiplayer, quai chua danh nguoc nguoi choi qua he thong server; do do defense bonus online chua co tac dung thuc te.
+- HP player_vitals va HP hien thi trong Godot chua duoc dong bo thanh mot he thong duy nhat.
+- Hinh trang bi la hinh ve don gian bang primitives, chua co sprite animation.
+- Chua chay Godot parser/runtime va chua build APK/AAB.
