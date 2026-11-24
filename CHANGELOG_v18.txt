@@ -1,0 +1,17 @@
+CUONG CHIEN ONLINE - v18
+
+Da cap nhat:
+1. Sua loi ky tu tab bi ghi thanh chuoi literal trong _apply_presence_diff() (loi cu phap GDScript).
+2. Bo sung dong bo HP/Max HP tu player_vitals trong Edge Function action state.
+3. Client doc vitals tu phan hoi state va cap nhat thanh mau nhan vat.
+4. Sua publishable key trong client theo key da duoc ghi nhan trong cau hinh du an.
+
+Supabase Edge Function game-combat:
+- Da deploy thanh cong version 14, status ACTIVE, verify_jwt=true.
+- Endpoint: https://slupzdmsahhhqbeetoig.supabase.co/functions/v1/game-combat
+- Action state hien doc player_vitals (hp, max_hp) va tra ve trong truong vitals.
+
+Luu y:
+- Chua xac nhan chay Godot parser/runtime va chua kiem thu hai dien thoai thuc te.
+- Chua tao APK/AAB. Can mo project trong Godot tren may tinh, kiem tra loi, sau do export Android.
+- Khong dua service_role key vao ung dung.

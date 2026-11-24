@@ -1,0 +1,11 @@
+CUONG CHIEN ONLINE - v20
+
+1. Dong bo lai file SQL submit_player_position trong goi ma nguon voi ham dang duoc ap dung tren Supabase: xac thuc toc do di chuyen, cap nhat game_presence, tra ve vi tri quai va danh sach nguoi choi.
+2. Chuyen preset APK test sang export template tieu chuan (khong bat buoc Gradle custom build). Preset AAB van giu Gradle build.
+3. Them huong dan rieng cho nguoi moi, canh bao khong chay lai migration tren Supabase neu khong co chi dan.
+4. Khong thay doi Edge Function dang chay va khong thay doi database live.
+
+GIOI HAN KIEM THU
+- Da kiem tra cau truc project, scene, script path, export preset va doi chieu SQL voi ham dang chay tren Supabase.
+- Chua co Godot executable trong moi truong tao goi; chua chay Godot parser/runtime, chua kiem thu 2 thiet bi, chua tao APK/AAB.
+- Day la ban nguyen mau MMORPG dang phat trien; can kiem thu thuc te va bo sung noi dung/gameplay truoc khi goi la san pham hoan chinh.

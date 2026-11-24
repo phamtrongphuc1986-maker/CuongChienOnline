@@ -1,0 +1,10 @@
+CUONG CHIEN ONLINE - v19
+
+Sua loi sau khi ra soat ma nguon v18:
+1. Khai bao movement_sync_timer duoc su dung trong _process() de dong bo toa do.
+2. Khai bao incoming_hit_pending de tranh loi bien chua ton tai trong callback HTTP.
+3. Dong bo publishable key trong auth.gd voi key dang dung trong game.gd.
+4. Giu nguyen Edge Function game-combat va cac SQL migration da co.
+
+Chua the xac nhan Godot parser/runtime hoac test 2 thiet bi trong moi truong nay.
+Khong co APK/AAB trong goi nay; can cai Godot va Android export templates de dong goi.
