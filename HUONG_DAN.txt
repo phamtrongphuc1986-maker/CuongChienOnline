@@ -1,0 +1,52 @@
+CUONG CHIEN ONLINE - REALTIME WEBSOCKET PROTOTYPE + ANDROID API 36
+====================================================================
+
+CẤU TRÚC:
+- Auth.tscn + scripts/auth.gd: đăng ký/đăng nhập Supabase Auth.
+- Game.tscn + scripts/game.gd: gameplay V2 và kết nối Supabase Realtime WebSocket.
+- scripts/game_session.gd: giữ access token, user ID và tên nhân vật trong phiên.
+- export_presets.cfg: hai cấu hình xuất APK thử nghiệm và AAB Google Play, target SDK 36.
+
+ĐÃ CÓ TRONG MÃ NGUỒN:
+- Đăng nhập email qua Supabase Auth.
+- Phòng chung realtime/game-village.
+- Presence để theo dõi người chơi online.
+- Broadcast tọa độ người chơi 4 lần/giây.
+- Heartbeat và tự thử kết nối lại khi socket đóng.
+- Hiển thị người chơi khác trên bản đồ.
+- Gameplay V2: di chuyển, đánh quái, kỹ năng, bình máu, EXP, cấp độ, vàng, Boss mẫu, túi đồ và lưu cục bộ.
+
+GIỚI HẠN RẤT QUAN TRỌNG:
+- WebSocket client mới được viết và đóng gói, CHƯA được chạy bằng Godot hoặc kiểm thử trên 2 điện thoại.
+- Chưa xác nhận giao thức join/broadcast hoạt động trên project Supabase thực tế.
+- Presence và Broadcast chỉ giúp hiển thị người chơi/di chuyển; chưa đồng bộ quái, HP, sát thương, EXP, vàng, vật phẩm.
+- Chiến đấu vẫn chạy cục bộ trên từng thiết bị; chưa có server-authoritative chống gian lận.
+- Chưa có chat, party, bang hội, PvP, giao dịch.
+- Supabase Free có giới hạn và không bảo đảm online 24/7.
+
+BACKEND:
+- URL: https://slupzdmsahhhqbeetoig.supabase.co
+- Bảng public.game_presence vẫn được giữ để tương thích/mở rộng; WebSocket client hiện tại dùng Presence + Broadcast channel, không dùng REST polling bảng này.
+- RLS/policies trên game_presence không thay thế quyền kiểm soát trong Realtime channel.
+- Chỉ nhúng publishable key. Không nhúng service_role/secret key.
+
+EXPORT:
+- Android APK - Test: preset APK.
+- Android AAB - Google Play: preset AAB.
+- Target SDK 36, ARM64.
+- Cần Godot 4.7.2, export templates, Android SDK/Build Tools và JDK phù hợp.
+- Cần cấu hình Gradle/Android build environment trước khi export.
+- AAB phát hành cần keystore release do chủ sở hữu tự tạo và giữ bí mật.
+- Chưa có APK/AAB trong ZIP này; chưa build và chưa kiểm thử.
+
+BẢO MẬT:
+- Session refresh token hiện lưu trong user://session.json; đây là lưu trữ cục bộ, chưa mã hóa riêng bởi ứng dụng.
+- Không gửi mật khẩu hoặc keystore/private key lên chat.
+
+
+BỔ SUNG TÍCH HỢP CHIẾN ĐẤU ONLINE (BẢN THỬ NGHIỆM)
+- Khi đăng nhập Supabase, nút đánh/đánh tự động gửi action=attack tới Edge Function game-combat.
+- Máy chủ quyết định sát thương, EXP, vàng và cấp độ; client không tự cộng thưởng trong nhánh chiến đấu online.
+- Chế độ offline cũ vẫn giữ nguyên. Kỹ năng diện rộng và Boss hiện vẫn là cơ chế offline, chưa đồng bộ máy chủ.
+- Mã client dùng publishable key và access token của người chơi; tuyệt đối không nhúng service-role key vào APK.
+- CHƯA chạy thử trong Godot trên điện thoại; cần kiểm thử đăng ký/đăng nhập, API và Realtime trước khi gọi là chơi online hoàn chỉnh.
