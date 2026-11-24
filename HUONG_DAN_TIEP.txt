@@ -1,0 +1,17 @@
+CAP NHAT TIEP THEO - TRANG BI ANH HUONG SAT THUONG
+
+Da cap nhat resolve_combat_attack tren Supabase:
+- Lay tong attack_bonus cua vat pham dang equipped tu game_item_catalog.
+- Sat thuong co ban = level * 8 + tong attack_bonus + ngau nhien 0..3.
+- Phan thuong EXP/vang van chi cap khi quai bi ha.
+- Ham bi thu hoi EXECUTE cua PUBLIC/anon/authenticated; chi service_role duoc goi.
+
+Da kiem tra:
+- resolve_combat_attack: authenticated_can_execute=false; service_role_can_execute=true.
+- resolve_player_monster_hit: authenticated_can_execute=false; service_role_can_execute=true.
+- Security Advisor con 8 thong bao INFO ve bang RLS khong co policy (cac bang nay khong cap quyen truc tiep cho nguoi choi) va 1 WARN ve leaked-password protection dang tat. Khong tu dong doi cai dat Auth cua tai khoan.
+
+Gioi han con lai:
+- AI quai van chua chay tren server.
+- Sat thuong nhan vao van duoc client kich hoat khi nhan vat bao dang dung gan quai; chua co xac minh toa do chong gian lan tu server.
+- Chua test Godot runtime, chua test hai thiet bi, chua build APK/AAB.
