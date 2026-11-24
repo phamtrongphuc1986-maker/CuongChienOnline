@@ -1,0 +1,22 @@
+CUONG CHIEN ONLINE - TICH HOP GIAO DIEN BOSS ONLINE
+
+Da bo sung vao scripts/game.gd:
+- Nut BOSS: lan dau mo bang thong tin Hac Long Vuong va lay HP tu may chu.
+- Khi bang Boss dang mo, cham nut BOSS/DÁNH BOSS de gui don danh len Edge Function.
+- Thanh HP Boss duoc cap nhat tu API; khi bang Boss mo, client hoi trang thai moi moi 2 giay.
+- Thuong, EXP, vang va sat thuong do SQL function tren Supabase quyet dinh.
+- Xu ly cooldown va trang thai Boss da bi ha.
+
+API actions:
+- boss_state
+- boss_attack
+- state
+- attack
+
+Luu y quan trong:
+1. Day la phan tich hop ma nguon, chua chay trong Godot Editor va chua kiem thu tren dien thoai.
+2. Nut Boss online hien dung mot nut: cham lan dau mo bang; cac lan tiep theo gui don danh Boss.
+3. Boss hien chua co co che hoi sinh tu dong; can quan tri vien reset HP/is_defeated trong database sau khi test.
+4. Realtime di chuyen va hien thi nguoi choi la mot lop rieng; thanh HP Boss dang cap nhat qua HTTP polling 2 giay, khong phai dong bo tuc thoi.
+5. Neu request dang xu ly, nut danh se bo qua lan cham tiep theo de tranh gui trung lenh.
+6. Khong co khoa service_role trong ung dung Android.
