@@ -1,0 +1,42 @@
+
+name: Build CuongChienOnline Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare Godot scripts
+        run: |
+          mkdir -p scripts build
+          cp auth.gd scripts/auth.gd
+          cp game.gd scripts/game.gd
+          cp game_session.gd scripts/game_session.gd
+
+      - name: Build Android APK
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/project" \
+            -w /project \
+            barichello/godot-ci:4.3 \
+            godot --headless --path /project \
+            --export-debug "Android APK - Test" \
+            /project/build/CuongChienOnline.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CuongChienOnline-Android-APK
+          path: build/CuongChienOnline.apk
+          if-no-files-found: error
+          retention-days: 14
