@@ -1,0 +1,14 @@
+CUONG CHIEN ONLINE - MP REGEN + LÔI ĐÌNH
+
+Da cap nhat:
+- MP hoi tu dong 1 diem moi 3 giay, toi da 100 MP. May chu tinh MP theo thoi gian khi client goi state/skill; khong can client tu cong MP.
+- Nut KIEM KHI: 20 MP, cooldown 5 giay, damage cap do x 16 + 0..7.
+- Nut LOI DINH: 35 MP, cooldown 8 giay, damage cap do x 25 + 0..11.
+- Ca hai ky nang duoc may chu kiem tra MP, cooldown, damage, HP quai va phan thuong.
+- Giao dien co hai nut ky nang rieng va thanh MP.
+
+Luu y:
+- API Supabase game-combat dang o version 6, action skill_state tinh va tra MP da hoi.
+- Client Godot la ma nguon chua test trong Godot Editor/Android.
+- Hien moi la ky nang don muc tieu quai Slime chung, chua co hieu ung dien rong tren nhieu quai.
+- Chua build APK/AAB.

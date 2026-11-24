@@ -1,0 +1,37 @@
+CUONG CHIEN ONLINE - MAY CHU BOSS CHUNG
+
+TRANG THAI
+- Da tao bang public.world_boss tren Supabase.
+- Boss dau tien: Hac Long Vuong.
+- HP chung ban dau: 10.000 / 10.000.
+- Edge Function game-combat da duoc cap nhat len version 3, verify_jwt=true.
+- Nguoi choi phai dang nhap; may chu xac minh JWT truoc khi xu ly.
+- Bang boss khong cap quyen doc/ghi truc tiep cho anon/authenticated.
+- RPC resolve_boss_attack chi duoc service_role goi.
+
+API
+POST https://slupzdmsahhhqbeetoig.supabase.co/functions/v1/game-combat
+Headers:
+  Content-Type: application/json
+  apikey: PUBLISHABLE_KEY
+  Authorization: Bearer ACCESS_TOKEN
+
+Doc trang thai boss:
+  {"action":"boss_state"}
+Danh boss:
+  {"action":"boss_attack"}
+
+LUAT HIEN TAI
+- Sat thuong moi lan: cap do * 12 + ngau nhien 0..7.
+- Thoi gian cho giua hai lan danh: 1,2 giay / tai khoan.
+- Boss co 10.000 HP dung chung trong phong lang.
+- Nguoi danh don ket lieu nhan 250 EXP va 500 vang.
+- Khi boss da bi ha, API tra code boss_defeated; chua co co che hoi sinh/reset boss.
+
+GIOI HAN CAN BIET
+- Da tao va kiem tra schema/quyen tren Supabase; Edge Function dang ACTIVE version 3.
+- Chua goi thu API bang JWT cua tai khoan game that.
+- Chua noi nut Boss trong Godot vao hai action boss_state/boss_attack.
+- Chua kiem thu nhieu dien thoai; chua co UI thanh mau Boss online.
+- Khong co APK/AAB trong goi nay. Khong co khoa service_role trong client.
+- Day la backend Boss dung chung, chua phai he thong MMORPG hoan chinh.

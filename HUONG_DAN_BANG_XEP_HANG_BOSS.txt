@@ -1,0 +1,15 @@
+CUONG CHIEN ONLINE - BANG XEP HANG BOSS
+
+Da them vao giao dien Godot:
+- Nut TOP BOSS o hang nut phia duoi.
+- Cham nut de tai API boss_leaderboard.
+- Hien thi toi da 10 nguoi gay sat thuong cao nhat, tong sat thuong va so luot danh.
+- Cham TOP BOSS lan nua de dong bang xep hang.
+
+Can luu y:
+1. API leaderboard da duoc trien khai tren Supabase Edge Function game-combat version 4.
+2. Giao dien nay moi la ma nguon; chua chay thu trong Godot Editor hoac tren dien thoai.
+3. Danh sach se rong neu chua co nguoi choi nao danh Boss.
+4. Phan thuong va sat thuong van do server xu ly.
+5. Chua tich hop ky nang online trong ban nay.
+6. APK/AAB chua duoc build.

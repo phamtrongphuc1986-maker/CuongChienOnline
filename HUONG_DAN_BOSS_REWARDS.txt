@@ -1,0 +1,26 @@
+CUONG CHIEN ONLINE - BOSS CONTRIBUTIONS / REWARDS
+
+Da cap nhat Supabase Edge Function game-combat len version 4.
+API action moi:
+- boss_leaderboard: tra ve top 10 nguoi gay sat thuong Boss.
+
+He thong dong gop:
+- Moi lan danh Boss, server ghi tong sat thuong va so lan danh theo user.
+- Khi Boss bi ha, moi nguoi da gay sat thuong nhan 75 EXP + 150 vang.
+- Nguoi ra don ket lieu nhan them 250 EXP + 500 vang (tong 325 EXP + 700 vang).
+- Phan thuong duoc danh dau da nhan trong cung transaction de tranh nhan lap.
+
+Hoi sinh Boss:
+- Da tao ham SQL reset_world_boss(bigint), chi service_role duoc quyen goi.
+- Khong co API reset cong khai cho nguoi choi; quan tri vien phai thao tac qua he thong server an toan.
+
+Bao mat da kiem tra:
+- authenticated khong duoc goi truc tiep resolve_boss_attack.
+- authenticated khong duoc goi reset_world_boss.
+- service_role duoc goi cac ham server.
+
+Gioi han:
+- API leaderboard da co, nhung bang xep hang chua duoc ve trong giao dien Godot.
+- Chua test end-to-end bang tai khoan nguoi choi that.
+- Khong tu dong hoi sinh Boss; reset la thao tac quan tri.
+- Chua build APK/AAB.

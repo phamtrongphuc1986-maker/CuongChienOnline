@@ -1,0 +1,28 @@
+CUONG CHIEN ONLINE - SERVER AI DOC LAP + PRIVATE REALTIME v15
+
+DA AP DUNG TREN SUPABASE:
+1. PostgreSQL Cron job `cuongchien-world-monster-ai` chay moi 2 giay.
+2. Job da duoc kiem tra lich su: cac lan chay gan nhat deu `succeeded`.
+3. `world_monster_ai_tick()` tu chay, khong can dien thoai gui lenh di chuyen de kich hoat AI.
+4. Slime chon nguoi choi co last_move_at trong 15 giay gan nhat, duoi theo toc do toi da 90 don vi/giay.
+5. Khi vao tam 30 don vi, server xu ly sat thuong qua resolve_player_monster_hit.
+6. submit_player_position chi kiem tra toc do/toa do va ghi game_presence; khong dieu khien nhip AI.
+7. Database trigger phat broadcast rieng tu may chu: player_position va monster_position.
+8. Godot client chuyen room sang private=true va nhan hai event tren.
+9. Toa do nguoi choi khong con duoc tin tu broadcast do client tu gui; may chu phat tu bang game_presence.
+
+KIEM TRA:
+- Cron job ACTIVE, schedule `2 seconds`.
+- Cac lan chay gan nhat: status `succeeded`.
+- Realtime private authorization policies da ton tai cho authenticated tren topic game-village.
+- world_monster_ai duoc them vao publication supabase_realtime.
+
+CHUA XAC NHAN:
+- Chua chay Godot editor/runtime trong moi truong nay.
+- Chua co hai dien thoai that de kiem tra chuyen dong va ping.
+- Chua kiem tra tat `Allow public access` trong Dashboard; private channel config va RLS policy da duoc chuan bi, nhung can xac minh setting Realtime toan project.
+- Chua build APK/AAB.
+
+GHI CHU:
+- AI server hien la tick 2 giay, khong phai game server 30-60 tick/giay. Day la muc thu nghiem tiet kiem tai nguyen.
+- De tang do muot, can test tai nhieu client va dieu chinh tick sau khi do tai.

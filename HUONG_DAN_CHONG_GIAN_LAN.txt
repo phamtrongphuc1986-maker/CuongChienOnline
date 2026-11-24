@@ -1,0 +1,16 @@
+CAP NHAT CHONG GIAN LAN DI CHUYEN - EDGE FUNCTION v11
+
+- Client gui toa do x/y len action move_position moi 0.25 giay.
+- Server gioi han toa do trong ban do 1280x720.
+- Server tinh quang duong di chuyen dua tren moc thoi gian truoc.
+- Gioi han toc do 450 don vi/giay + dung sai 12 don vi.
+- Neu vuot gioi han, server tu choi va client dua nhan vat ve toa do server.
+- Server tu kiem tra nhan vat co trong tam quai Slime hay khong; neu co thi goi ham tru HP, tinh phong thu va cooldown o server.
+- Client khong con tu gui lenh player_hit khi tu bao la dung gan quai.
+- RPC submit_player_position chi service_role duoc goi.
+
+Gioi han:
+- Chua phai chong hack tuyet doi: can them ky xac thuc session/sequence va server-side tick.
+- Vi tri client gui len server, chua co server authoritative physics; nguoi dung co the tinh toan packet hop le.
+- Chua dong bo realtime toa do den tat ca client trong ban nay.
+- Chua test Godot runtime, mang that, hai dien thoai; chua build APK/AAB.

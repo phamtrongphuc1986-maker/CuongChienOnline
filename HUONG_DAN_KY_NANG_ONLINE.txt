@@ -1,0 +1,20 @@
+CUONG CHIEN ONLINE - KY NANG ONLINE
+
+Da them ky nang online Sword Wave (Kiem Khi):
+- Nhan nut KIEM KHI tren giao dien.
+- Server tru 20 MP, cooldown 5 giay.
+- Sat thuong = cap do x 16 + ngau nhien 0-7.
+- HP quai chung duoc tru tren database.
+- Neu ha quai: +25 EXP, +5-12 vang (do function server quyet dinh; skill function hien tai co phan thuong co dinh 5 vang).
+- MP va cooldown do server kiem soat; client khong tu tang EXP/vang.
+
+Da tao san action thunder_strike trong SQL:
+- 35 MP, cooldown 8 giay.
+- Sat thuong = cap do x 25 + ngau nhien 0-11.
+- Chua co nut rieng trong giao dien.
+
+Gioi han:
+- Client moi chi gui sword_wave.
+- Chua co hoi MP theo thoi gian; hien tai MP chi tieu hao, can bo sung regen.
+- Chua test trong Godot hoac tren Android.
+- Chua build APK/AAB.

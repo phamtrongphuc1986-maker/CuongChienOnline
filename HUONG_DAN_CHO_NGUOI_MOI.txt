@@ -1,0 +1,34 @@
+CUONG CHIEN ONLINE - HUONG DAN NGUOI MOI (v20)
+
+QUAN TRONG
+- Ban game hien tai la ban NGUYEN MAU dang phat trien, chua phai MMORPG hoan chinh de phat hanh.
+- Supabase cua du an da duoc cau hinh tren may chu. Khong chay lai cac file SQL trong thu muc database neu khong co huong dan cu the; chay lai co the ghi de logic dang hoat dong.
+- Khong dua service_role key vao game, khong gui mat khau tai khoan cho nguoi ho tro.
+- Khong co APK san trong goi nay. Can Godot va Android SDK/export templates de tao APK.
+
+NEU KHONG BIET GODOT: CHI CAN LAM 2 VIEC DAU
+1. Tren may tinh Windows, tai Godot Standard tu https://godotengine.org/download/windows/ va giai nen.
+2. Tai va giai nen file ZIP nay. Mo Godot, bam Import, chon file project.godot trong thu muc CuongChienOnline_Inventory_Project, sau do bam Import & Edit.
+3. Bam nut tam giac Run Project. Neu xuat hien loi, chup anh tab Debugger/Errors gui nguoi ho tro.
+
+KIEM TRA DANG NHAP VA CHOI ONLINE
+1. Can ket noi Internet.
+2. Tao tai khoan thu nghiem bang email hop le va mat khau tu 6 ky tu. Neu Supabase bat xac minh email, mo email xac minh truoc khi dang nhap.
+3. Dang nhap, vao map lang. Kiem tra nhan vat, HP/MP, quai, tan cong va tui do.
+4. Muon kiem tra multiplayer that, can dang nhap 2 tai khoan tren 2 thiet bi khac nhau. Khong dung chung tai khoan de test dong thoi.
+5. Neu loi, gui anh loi va noi ro loi xuat hien luc mo game, dang nhap hay danh quai.
+
+TAO APK ANDROID (SAU KHI GAME CHAY DUOC TREN WINDOWS)
+1. Cai OpenJDK 17 va Android Studio tu cac trang chinh thuc.
+2. Mo Android Studio lan dau va de no cai Android SDK.
+3. Trong Godot: Editor > Editor Settings > Export > Android. Dien Java SDK Path va Android SDK Path theo thu muc da cai.
+4. Trong Godot: Editor > Manage Export Templates > Download dung phien ban Godot dang dung.
+5. Mo Project > Export, chon Android APK - Test, bam Export Project va luu file build/CuongChienOnline.apk.
+6. Cai APK len dien thoai de thu. Chi lam AAB sau khi APK va multiplayer da duoc kiem thu.
+
+TAI LIEU CHINH THUC
+Godot Android export: https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html
+Android Studio: https://developer.android.com/studio
+OpenJDK 17: https://adoptium.net/temurin/releases/?version=17
+
+KHONG CO PHI BAT BUOC CHO GODOT, ANDROID STUDIO HOAC OPENJDK. Google Play co phi tai khoan nha phat trien neu muon dang phat hanh tren Play Store; khong can mua de tao APK thu nghiem tren dien thoai.

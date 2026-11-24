@@ -1,0 +1,34 @@
+KIEM THU HAI THIET BI - CUONG CHIEN ONLINE v17
+
+DA KIEM TRA TREN SUPABASE:
+- Edge Function game-combat: ACTIVE, version 12, verify_jwt=true.
+- Cron cuongchien-world-monster-ai: ACTIVE, chu ky 2 giay.
+- 5 lan chay gan nhat cua Cron: succeeded.
+- game_presence va world_monster_ai da nam trong publication supabase_realtime.
+- Realtime authenticated SELECT policy chi cho topic game-village va extension broadcast/presence.
+- Da thu hep INSERT policy: client authenticated chi duoc gui extension presence.
+- Broadcast vi tri nguoi choi va quai do database trigger gui; khong tin broadcast vi tri tu client.
+
+DA SUA TRONG GODOT CLIENT:
+- Bo xu ly move_position bi lap.
+- Theo doi last-seen va xoa nguoi choi cu sau 20 giay.
+- Don dep timestamp khi Presence state/leave.
+- Dong bo source Edge Function voi ban live v12.
+
+KIEM THU THUC TE CAN HAI DIEN THOAI:
+1. Tren PC cai Godot 4.x va mo project.
+2. Chay hai client debug tren hai dien thoai Android.
+3. Dang nhap hai tai khoan khac nhau, vao lang village.
+4. Di chuyen A va quan sat B; di chuyen B va quan sat A.
+5. Dung yen: Cron van chay AI; Slime chon muc tieu online gan nhat.
+6. Cho Slime cham A: HP A giam, khong tu y giam HP B.
+7. Ngat mang A hon 20 giay: B phai xoa A khoi man hinh.
+8. Ket noi lai A: A phai vao lai realtime va xuat hien.
+9. Kiem tra Godot Output va Supabase Logs neu join bi tu choi.
+
+GIOI HAN KIEM THU:
+- Khong co Godot executable trong moi truong nay.
+- Khong co quyen dieu khien hai dien thoai that cua nguoi dung.
+- Do do chua xac nhan Godot parser/runtime, chua pass test hai may, chua build APK/AAB.
+- Chua tat/kiem tra duoc toggle Allow public access trong Realtime Dashboard.
+- Khong phat hanh APK truoc khi test tren hai may pass.

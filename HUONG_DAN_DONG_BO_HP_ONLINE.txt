@@ -1,0 +1,19 @@
+CUONG CHIEN ONLINE - DONG BO HP VA SAT THUONG ONLINE
+
+Da cap nhat Supabase Edge Function game-combat version 10.
+- Them action player_hit.
+- Khi nhan vat cham quai Slime trong map online, Godot gui yeu cau len server.
+- Server tinh sat thuong co ban 5, tru phong thu tu trang bi dang mac, toi thieu 1.
+- Moi tai khoan co cooldown nhan sat thuong 900ms.
+- HP duoc luu trong public.player_vitals.
+- Khi HP ve 0, server hoi sinh tai diem an toan voi HP day.
+- Bang player_incoming_hit_state luu moc thoi gian de chan spam goi hit.
+- RPC chi service_role duoc goi; authenticated khong co quyen goi truc tiep.
+
+Gioi han:
+- Moi nguoi choi hien chi nhan sat thuong khi dung gan quai Slime chung.
+- AI quai di chuyen, tam danh va tan cong theo tick van chua duoc chuyen hoan toan sang server.
+- Boss chua danh nguoc nguoi choi qua co che nay.
+- HP hien thi tren HUD cap nhat sau phan hoi server, chua co realtime HP push.
+- Chua test end-to-end bang tai khoan that hoac Godot runtime.
+- Chua build APK/AAB.
